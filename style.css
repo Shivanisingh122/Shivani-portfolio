@@ -1,18 +1,16 @@
-html {
+/* General Styles */
+html, body {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    position: relative;
-    line-height: 1.5;
     overflow-x: hidden;
     overflow-y: scroll;
-    font-family: 'Source Sans Pro',sans-serif;
-    scroll-behavior: smooth;
+    line-height: 1.5;
 }
 
 .header {
@@ -21,7 +19,7 @@ body {
     z-index: 1000;
     background: #fff;
     color: #333;
-    box-shadow: 0 10px 100px rgba(0,0,0,.1);
+    box-shadow: 0 10px 100px rgba(0, 0, 0, .1);
     line-height: 1.5;
 }
 
@@ -30,11 +28,10 @@ body {
     padding: 1rem 5rem;
     font-weight: 700;
     letter-spacing: 1px;
-    font-family: 'Source Sans Pro',sans-serif;
+    text-transform: uppercase;
     align-items: center;
     justify-content: space-between;
     font-size: 14px;
-    text-transform: uppercase;
 }
 
 .link {
@@ -57,8 +54,7 @@ a:hover {
 }
 
 .home {
-    /* color: #ffff; */
-    background: linear-gradient(to right,rgba(245,245,245,.8),rgba(245,245,245,.8)),url(asset/aboutmeImg.jpg);
+    background: linear-gradient(to right, rgba(245, 245, 245, .8), rgba(245, 245, 245, .8)), url(asset/aboutmeImg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -71,7 +67,7 @@ a:hover {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     max-width: 90rem;
     width: 92%;
 }
@@ -106,7 +102,6 @@ a:hover {
 .about-elements {
     display: flex;
     flex-direction: row;
-    width: 100%;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -122,14 +117,10 @@ a:hover {
     flex: 1;
 }
 
-/* took this button-55 from bootstrap */
 .button-55 {
     align-self: center;
     background-color: #fff;
     background-image: none;
-    background-position: 0 90%;
-    background-repeat: repeat no-repeat;
-    background-size: 4px 3px;
     border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
     border-style: solid;
     border-width: 2px;
@@ -146,13 +137,7 @@ a:hover {
     margin: .75rem .50rem;
     text-decoration: none;
     transition: all 235ms ease-in-out;
-    border-bottom-left-radius: 15px 255px;
-    border-bottom-right-radius: 225px 15px;
-    border-top-left-radius: 255px 15px;
-    border-top-right-radius: 15px 225px;
     user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
 }
 
 .button-55:hover {
@@ -177,10 +162,7 @@ a:hover {
 h2 {
     display: block;
     font-size: 1.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin: 0.83em 0;
     font-weight: bold;
 }
 
@@ -188,10 +170,9 @@ h2 {
     display: block;
     font-size: 2.2rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
     letter-spacing: 3px;
     text-align: center;
-    margin-bottom: 2.0rem;
+    margin-bottom: 2rem;
     position: relative;
     color: #111;
 }
@@ -214,7 +195,7 @@ hr {
     line-height: 1.6;
 }
 
-.project {
+.project, .api-projects {
     background: linear-gradient(to right, rgba(245, 245, 245, .8), rgba(245, 245, 245, .8)), url(asset/pj.jpg);
     background-position: center;
     background-size: cover;
@@ -225,12 +206,9 @@ hr {
 
 .sub-projects {
     display: flex;
-    padding: 0rem 10rem;
-}
-
-.sub-projects {
-    display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0rem 10rem;
 }
 
 .card-img-top {
@@ -242,13 +220,12 @@ hr {
     padding: 10px 20px;
     color: #000;
     border: 2px solid #000;
-    border-radius: 5px; /* Adjust the radius for rounded corners */
+    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     text-decoration: none;
     transition: transform 1.0s;
 }
-
 
 .btn.btn-primary:hover {
     transform: scale(1.1);
@@ -271,10 +248,8 @@ hr {
     margin: 0px 20px;
     transition: transform 0.3s ease-in-out;
     background-color: #fafafa;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
     border-radius: 100%;
-    scale: 1.1;
     font-size: 0.8rem;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -285,7 +260,6 @@ hr {
 }
 
 i {
-    scale: 1.1;
     filter: invert(50%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
@@ -301,4 +275,144 @@ i {
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .sub-projects {
+        padding: 0rem 5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-right {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .navbar-item {
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    .home-content {
+        width: 100%;
+    }
+
+    .home-info {
+        margin-top: 2rem;
+    }
+
+    .about-elements {
+        flex-direction: column;
+    }
+
+    .sub-projects {
+        padding: 0rem 2rem;
+    }
+
+    .card-img-top {
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .navbar-item {
+        padding: 0.5rem 0;
+    }
+
+    .home-content {
+        padding: 0 1rem;
+    }
+
+    .heading-primary {
+        font-size: 2.5rem;
+    }
+
+    .text-primary {
+        font-size: 1rem;
+    }
+
+    .about {
+        padding: 3rem 2rem;
+    }
+
+    .heading-sec__main {
+        font-size: 1.8rem;
+    }
+
+    .heading-sec__sub {
+        font-size: 0.9rem;
+    }
+
+    .sub-projects {
+        padding: 0;
+    }
+
+    .btn.btn-primary {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .social-icons a {
+        margin: 0 10px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .home-content {
+        padding: 0 0.5rem;
+    }
+
+    .heading-primary {
+        font-size: 2rem;
+    }
+
+    .text-primary {
+        font-size: 0.9rem;
+    }
+
+    .about {
+        padding: 2rem 1rem;
+    }
+
+    .heading-sec__main {
+        font-size: 1.5rem;
+    }
+
+    .heading-sec__sub {
+        font-size: 0.8rem;
+    }
+
+    .social-icons a {
+        padding: 8px;
+    }
+
+    .btn.btn-primary {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .footer-text {
+        font-size: 0.9rem;
+    }
 }
